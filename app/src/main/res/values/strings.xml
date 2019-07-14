@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GrupoZapChallenge</string>
+    <string name="title_main_activity">Teste de engenharia do GrupoZap</string>
+    <string name="subtitle_main_activity">Clique abaixo para filtrar os imóveis por portal</string>
+    <string name="logo_grupo_zap">Logo GrupoZap</string>
+
 </resources>
