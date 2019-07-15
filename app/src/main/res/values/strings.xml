@@ -4,4 +4,13 @@
     <string name="subtitle_main_activity">Clique abaixo para filtrar os imóveis por portal</string>
     <string name="logo_grupo_zap">Logo GrupoZap</string>
 
+    <!--building_fragment-->
+    <string name="vagas">vagas</string>
+    <string name="banheiros">banheiros</string>
+    <string name="quartos">quartos</string>
+    <string name="metros">m²</string>
+    <string name="valor">Valor:</string>
+    <string name="imovel_tipo_aluguel">Imóvel para Aluguel</string>
+    <string name="imovel_tipo_venda">Imóvel para Venda</string>
+
 </resources>
