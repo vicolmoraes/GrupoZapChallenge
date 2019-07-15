@@ -20,7 +20,11 @@ data class PricingInfos(
     var yearlyIptu: String,
     var price: String,
     var businessType: String,
-    var monthlyCondoFee: String
+    var monthlyCondoFee: String,
+
+    var period: String,
+    var rentalTotalPrice: String
+
 )
 
 data class Address(
