@@ -22,6 +22,18 @@ class BuildingActivity : AppCompatActivity() {
 
         rvImages = rv_foto_building_activity
         rvImages.adapter = ImageAdapter(building.images, this)
+
+        tv_num_valor_building_activity.text = building.pricingInfos.price
+        tv_num_banheiros_building_activity.text = building.bathrooms.toString()
+        tv_num_quartos_building_activity.text = building.bedrooms.toString()
+        tv_num_vagas_building_activity.text = building.parkingSpaces.toString()
+        tv_num_metros_building_activity.text = building.usableAreas.toString()
+
+        if (building.pricingInfos.businessType.equals("SALE"))
+            tv_buildingType_building_activity.text = this.getString(R.string.imovel_tipo_venda)
+        else
+            tv_buildingType_building_activity.text = this.getString(R.string.imovel_tipo_aluguel)
+
     }
 
 }

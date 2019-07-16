@@ -7,6 +7,7 @@ import android.widget.ImageButton
 import com.vicolmoraes.grupozapchallenge.R
 import com.vicolmoraes.grupozapchallenge.model.Building
 import com.vicolmoraes.grupozapchallenge.vivaReal.VivaRealActivity
+import com.vicolmoraes.grupozapchallenge.zap.ZapActivity
 import kotlinx.android.synthetic.main.main_activity.*
 import java.io.Serializable
 
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startZap(buildings: List<Building>) {
-        val intent: Intent = Intent(this, VivaRealActivity::class.java)
+        val intent: Intent = Intent(this, ZapActivity::class.java)
         intent.putExtra("buildings_zap", buildings as Serializable)
         startActivity(intent)
     }

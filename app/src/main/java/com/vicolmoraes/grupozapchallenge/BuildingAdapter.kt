@@ -9,24 +9,15 @@ import com.bumptech.glide.Glide
 import com.vicolmoraes.grupozapchallenge.model.Building
 import kotlinx.android.synthetic.main.building_item.view.*
 
-class BuildingAdapter(val items: List<Building>, val context: Context) :
-    RecyclerView.Adapter<BuildingAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.building_item, p0, false))
-        //To change body of created functions use File | Settings | File Templates.
+class BuildingAdapter(val items: List<Building>, val context: Context, val clickListener: (Building) -> Unit) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    override fun onBindViewHolder(p0: RecyclerView.ViewHolder, p1: Int) {
+        (p0 as BuildingViewHolder).bind(items[p1], clickListener)
     }
 
-    override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
-        if (items.get(p1).pricingInfos.businessType.equals("SALE"))
-            p0?.tvBuildingType?.text = context.getString(R.string.imovel_tipo_venda)
-        else
-            p0?.tvBuildingType?.text = context.getString(R.string.imovel_tipo_aluguel)
-        p0?.tvNumRoom?.text = items.get(p1).bedrooms.toString()
-        p0?.tvNumBath?.text = items.get(p1).bathrooms.toString()
-        p0?.tvNumCarSeat?.text = items.get(p1).parkingSpaces.toString()
-        p0?.tvBuildingSize?.text = items.get(p1).usableAreas.toString()
-        p0?.tvPrice?.text = items.get(p1).pricingInfos.price
-        Glide.with(context).load(items.get(p1).images.get(0)).into(p0?.ivBuildingImage);
+    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): BuildingViewHolder {
+        return BuildingViewHolder(LayoutInflater.from(context).inflate(R.layout.building_item, p0, false))
         //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -34,15 +25,27 @@ class BuildingAdapter(val items: List<Building>, val context: Context) :
         return items.size
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class BuildingViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val itemVieww = view
+        fun bind(part: Building, clickListener: (Building) -> Unit) {
+            if (part.pricingInfos.businessType.equals("SALE")) {
+                itemVieww.tv_buildingType_building_fragment.text =
+                    itemVieww.context.getString(R.string.imovel_tipo_venda)
+            } else
+                itemVieww.tv_buildingType_building_fragment.text =
+                    itemVieww.context.getString(R.string.imovel_tipo_aluguel)
+
+            itemVieww.tv_num_quartos_building_fragment.text = part.bedrooms.toString()
+            itemVieww.tv_num_banheiros_building_fragment.text = part.bathrooms.toString()
+            itemVieww.tv_num_vagas_building_fragment.text = part.parkingSpaces.toString()
+            itemVieww.tv_num_metros_building_fragment.text = part.usableAreas.toString()
+            itemVieww.tv_num_valor_building_fragment.text = part.pricingInfos.price
+            Glide.with(itemVieww.context).load(part.images.get(0)).into(itemVieww.iv_foto_building_fragment);
+
+            itemVieww.setOnClickListener { clickListener(part) }
+        }
         // Holds the TextView that will add each animal to
-        val tvBuildingType = view.tv_buildingType_building_fragment
-        val tvNumRoom = view.tv_num_quartos_building_fragment
-        val tvNumBath = view.tv_num_banheiros_building_fragment
-        val tvNumCarSeat = view.tv_num_vagas_building_fragment
-        val tvBuildingSize = view.tv_num_metros_building_fragment
-        val tvPrice = view.tv_num_valor_building_fragment
-        val ivBuildingImage = view.iv_foto_building_fragment
-        val clLayout = view.cl_layout_building_fragment
+
     }
+
 }
