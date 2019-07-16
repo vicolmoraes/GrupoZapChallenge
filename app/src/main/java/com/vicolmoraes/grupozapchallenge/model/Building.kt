@@ -1,5 +1,7 @@
 package com.vicolmoraes.grupozapchallenge.model
 
+import java.io.Serializable
+
 data class Building(
     var usableAreas: Int,
     var listingType: String,
@@ -14,7 +16,7 @@ data class Building(
     var bathrooms: Int,
     var bedrooms: Int,
     var pricingInfos: PricingInfos
-)
+) : Serializable
 
 data class PricingInfos(
     var yearlyIptu: String,
@@ -25,20 +27,20 @@ data class PricingInfos(
     var period: String,
     var rentalTotalPrice: String
 
-)
+) : Serializable
 
 data class Address(
     var city: String,
     var neighborhood: String,
-    var geolocation: Geolocation
-)
+    var geoLocation: Geolocation
+) : Serializable
 
 data class Geolocation(
     var precision: String,
     var location: Location
-)
+) : Serializable
 
 data class Location(
-    var lon: String,
-    var lat: String
-)
+    var lon: Double,
+    var lat: Double
+) : Serializable

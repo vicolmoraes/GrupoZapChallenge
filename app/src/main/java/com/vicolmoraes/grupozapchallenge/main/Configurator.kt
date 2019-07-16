@@ -11,8 +11,6 @@ enum class Configurator {
         val interactor = Interactor()
         interactor.presenter = presenter
 
-
         mainActivity.interactor = interactor
-
     }
 }

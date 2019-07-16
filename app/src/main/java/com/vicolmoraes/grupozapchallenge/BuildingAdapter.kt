@@ -17,7 +17,10 @@ class BuildingAdapter(val items: List<Building>, val context: Context) :
     }
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
-        p0?.tvBuildingType?.text = items.get(p1).pricingInfos.businessType
+        if (items.get(p1).pricingInfos.businessType.equals("SALE"))
+            p0?.tvBuildingType?.text = context.getString(R.string.imovel_tipo_venda)
+        else
+            p0?.tvBuildingType?.text = context.getString(R.string.imovel_tipo_aluguel)
         p0?.tvNumRoom?.text = items.get(p1).bedrooms.toString()
         p0?.tvNumBath?.text = items.get(p1).bathrooms.toString()
         p0?.tvNumCarSeat?.text = items.get(p1).parkingSpaces.toString()

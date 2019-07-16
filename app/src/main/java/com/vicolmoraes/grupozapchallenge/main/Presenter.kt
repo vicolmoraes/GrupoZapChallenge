@@ -26,11 +26,11 @@ class Presenter {
         zapList = ArrayList()
 
         for (x in buildings) {
-            if (x.address.geolocation.location.lat.isNotEmpty() && x.address.geolocation.location.lat.isNotEmpty() && x.pricingInfos.monthlyCondoFee.isNotEmpty() && x.usableAreas > 0) {
+            if (x.address.geoLocation.location.lat != 0.0 && x.address.geoLocation.location.lon != 0.0 && x.pricingInfos.monthlyCondoFee != null && x.usableAreas > 0) {
                 if (x.pricingInfos.businessType == "SALE") {
                     if (LatLonUtils.calcular(
-                            x.address.geolocation.location.lat.toDouble(),
-                            x.address.geolocation.location.lon.toDouble()
+                            x.address.geoLocation.location.lat,
+                            x.address.geoLocation.location.lon
                         )
                     )
                         zapVendaMinima = zapVendaMinima - (0.1 * zapVendaMinima)
@@ -44,8 +44,8 @@ class Presenter {
                     zapVendaMinima = 600000.0
                 } else {
                     if (LatLonUtils.calcular(
-                            x.address.geolocation.location.lat.toDouble(),
-                            x.address.geolocation.location.lon.toDouble()
+                            x.address.geoLocation.location.lat,
+                            x.address.geoLocation.location.lon
                         )
                     )
                         vivaRealAluguelMax = vivaRealAluguelMax + (0.5 * vivaRealAluguelMax)
