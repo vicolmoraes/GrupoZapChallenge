@@ -1,8 +1,10 @@
-package com.vicolmoraes.grupozapchallenge
+package com.vicolmoraes.grupozapchallenge.zap
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
+import com.vicolmoraes.grupozapchallenge.BuildingAdapter
+import com.vicolmoraes.grupozapchallenge.R
 import com.vicolmoraes.grupozapchallenge.model.Building
 import kotlinx.android.synthetic.main.zap_activity.*
 

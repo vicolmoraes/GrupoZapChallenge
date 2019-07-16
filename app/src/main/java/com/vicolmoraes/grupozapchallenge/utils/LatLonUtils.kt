@@ -1,4 +1,4 @@
-package com.vicolmoraes.grupozapchallenge
+package com.vicolmoraes.grupozapchallenge.utils
 
 class LatLonUtils {
     companion object {

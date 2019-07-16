@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.vicolmoraes.grupozapchallenge.model.Building
 import kotlinx.android.synthetic.main.building_item.view.*
 
@@ -22,6 +23,7 @@ class BuildingAdapter(val items: List<Building>, val context: Context) :
         p0?.tvNumCarSeat?.text = items.get(p1).parkingSpaces.toString()
         p0?.tvBuildingSize?.text = items.get(p1).usableAreas.toString()
         p0?.tvPrice?.text = items.get(p1).pricingInfos.price
+        Glide.with(context).load(items.get(p1).images.get(0)).into(p0?.ivBuildingImage);
         //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -37,6 +39,7 @@ class BuildingAdapter(val items: List<Building>, val context: Context) :
         val tvNumCarSeat = view.tv_num_vagas_building_fragment
         val tvBuildingSize = view.tv_num_metros_building_fragment
         val tvPrice = view.tv_num_valor_building_fragment
-
+        val ivBuildingImage = view.iv_foto_building_fragment
+        val clLayout = view.cl_layout_building_fragment
     }
 }

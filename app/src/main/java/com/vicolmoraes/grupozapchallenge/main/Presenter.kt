@@ -1,7 +1,7 @@
 package com.vicolmoraes.grupozapchallenge.main
 
-import com.vicolmoraes.grupozapchallenge.LatLonUtils
 import com.vicolmoraes.grupozapchallenge.model.Building
+import com.vicolmoraes.grupozapchallenge.utils.LatLonUtils
 
 class Presenter {
 

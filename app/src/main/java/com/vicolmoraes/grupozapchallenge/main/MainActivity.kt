@@ -5,15 +5,14 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.ImageButton
 import com.vicolmoraes.grupozapchallenge.R
-import com.vicolmoraes.grupozapchallenge.VivaRealActivity
 import com.vicolmoraes.grupozapchallenge.model.Building
+import com.vicolmoraes.grupozapchallenge.vivaReal.VivaRealActivity
 import kotlinx.android.synthetic.main.main_activity.*
 import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
     lateinit var ibVivaReal: ImageButton
     lateinit var ibZap: ImageButton
-    lateinit var imoveis: List<Building>
     lateinit var interactor: Interactor
     val zap = 1
     val vivaReal = 0

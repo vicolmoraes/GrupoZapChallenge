@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".VivaRealActivity"/>
-        <activity android:name=".ZapActivity"/>
+        <activity android:name=".vivaReal.VivaRealActivity"/>
+        <activity android:name=".zap.ZapActivity"/>
+        <activity android:name=".building.BuildingActivity"/>
     </application>
 </manifest>
