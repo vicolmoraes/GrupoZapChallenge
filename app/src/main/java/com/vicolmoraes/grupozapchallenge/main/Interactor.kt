@@ -10,7 +10,7 @@ class Interactor {
 
     lateinit var presenter: Presenter
 
-    fun fetch() {
+    fun fetch(int: Int) {
         val call = RetrofitInitializer().buildingService().list()
         call.enqueue(object : Callback<List<Building>?> {
             override fun onResponse(
@@ -19,7 +19,10 @@ class Interactor {
             ) {
                 response?.body()?.let {
                     val imoveis: List<Building> = it
-                    presenter.setBuildings(imoveis)
+                    if (int == 0)
+                        presenter.setVivaReal(imoveis)
+                    else
+                        presenter.setZap(imoveis)
                 }
             }
 

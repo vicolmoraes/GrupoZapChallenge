@@ -11,8 +11,14 @@ class Presenter {
     var zapVendaMinima: Double = 600000.0
     var vivaRealAluguelMax: Double = 4000.0
 
-    fun setBuildings(buildings: List<Building>) {
-        mainActivity.imoveis = buildings
+    fun setVivaReal(buildings: List<Building>) {
+        filter(buildings)
+        mainActivity.startVivaReal(vivaRealList.toList())
+    }
+
+    fun setZap(buildings: List<Building>) {
+        filter(buildings)
+        mainActivity.startZap(zapList.toList())
     }
 
     fun filter(buildings: List<Building>) {
