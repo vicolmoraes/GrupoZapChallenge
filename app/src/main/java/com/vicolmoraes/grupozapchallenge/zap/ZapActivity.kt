@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
+import android.widget.Button
 import com.vicolmoraes.grupozapchallenge.BuildingAdapter
 import com.vicolmoraes.grupozapchallenge.R
 import com.vicolmoraes.grupozapchallenge.building.BuildingActivity
@@ -14,6 +15,8 @@ import java.io.Serializable
 class ZapActivity : AppCompatActivity() {
     lateinit var rvBuildings: RecyclerView
     lateinit var listaImoveis: List<Building>
+    lateinit var btVerMais: Button
+    var contador = 20
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +32,15 @@ class ZapActivity : AppCompatActivity() {
 
     private fun findViews() {
         val buildings = intent.extras.get("buildings_zap") as List<Building>
-        listaImoveis = buildings.take(20)
+        listaImoveis = buildings.take(contador)
         rvBuildings = rv_zap_activity
+
+        btVerMais = bt_ver_mais_zap_activity
+        btVerMais.setOnClickListener {
+            contador = contador + 20
+            listaImoveis = buildings.take(contador)
+            setRecycler()
+        }
     }
 
     private fun partItemClicked(imovel: Building) {

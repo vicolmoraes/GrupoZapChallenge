@@ -3,6 +3,9 @@
     <string name="title_main_activity">Teste de engenharia do GrupoZap</string>
     <string name="subtitle_main_activity">Clique abaixo para filtrar os imóveis por portal</string>
     <string name="logo_grupo_zap">Logo GrupoZap</string>
+    <string name="logo_zap_imoveis">Logo Zap Imóveis</string>
+    <string name="logo_viva_real">Logo Viva Real</string>
+
 
     <!--building item-->
     <string name="vagas">vagas</string>
@@ -12,5 +15,7 @@
     <string name="valor">Valor:</string>
     <string name="imovel_tipo_aluguel">Imóvel para Aluguel</string>
     <string name="imovel_tipo_venda">Imóvel para Venda</string>
+    <string name="ver_mais">Ver Mais</string>
+
 
 </resources>

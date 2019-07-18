@@ -1,10 +1,12 @@
 package com.vicolmoraes.grupozapchallenge
 
 import android.content.Context
+import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import com.bumptech.glide.Glide
 import com.vicolmoraes.grupozapchallenge.model.Building
 import kotlinx.android.synthetic.main.building_item.view.*
@@ -41,6 +43,16 @@ class BuildingAdapter(val items: List<Building>, val context: Context, val click
             itemVieww.tv_num_metros_building_fragment.text = part.usableAreas.toString()
             itemVieww.tv_num_valor_building_fragment.text = part.pricingInfos.price
             Glide.with(itemVieww.context).load(part.images.get(0)).into(itemVieww.iv_foto_building_fragment);
+
+            val layout: CardView = itemVieww.cv_card_building_fragment
+
+            val animZoomin = AnimationUtils.loadAnimation(
+                itemVieww.context,
+                R.anim.zoom_from_center
+            )
+            val x = 200 * adapterPosition
+            animZoomin.startOffset = x.toLong()
+            layout.setAnimation(animZoomin)
 
             itemVieww.setOnClickListener { clickListener(part) }
         }
