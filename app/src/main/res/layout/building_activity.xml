@@ -11,6 +11,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:listitem="@layout/image_item"
+            tools:itemCount="9"
             android:scrollbars="horizontal"
             android:orientation="horizontal"
             app:layout_constraintTop_toTopOf="parent"

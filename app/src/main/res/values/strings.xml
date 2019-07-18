@@ -6,6 +6,7 @@
     <string name="logo_zap_imoveis">Logo Zap Imóveis</string>
     <string name="logo_viva_real">Logo Viva Real</string>
 
+    <string name="formatacao_reais">R$ %1$.2f</string>
 
     <!--building item-->
     <string name="vagas">vagas</string>

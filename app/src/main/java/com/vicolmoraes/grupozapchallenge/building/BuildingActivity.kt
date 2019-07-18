@@ -23,7 +23,8 @@ class BuildingActivity : AppCompatActivity() {
         rvImages = rv_foto_building_activity
         rvImages.adapter = ImageAdapter(building.images, this)
 
-        tv_num_valor_building_activity.text = building.pricingInfos.price
+        tv_num_valor_building_activity.text =
+            getString(R.string.formatacao_reais, building.pricingInfos.price.toFloat())
         tv_num_banheiros_building_activity.text = building.bathrooms.toString()
         tv_num_quartos_building_activity.text = building.bedrooms.toString()
         tv_num_vagas_building_activity.text = building.parkingSpaces.toString()

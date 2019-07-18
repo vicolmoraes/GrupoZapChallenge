@@ -17,8 +17,9 @@
 
         <ImageView
                 android:id="@+id/iv_foto_building_fragment"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:importantForAccessibility="no"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -33,7 +34,7 @@
                 android:layout_marginEnd="@dimen/margin_24"
                 android:layout_marginTop="@dimen/margin_24"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/iv_foto_building_fragment"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_foto_building_fragment"/>
 
         <TextView
@@ -67,9 +68,11 @@
         <TextView
                 android:id="@+id/tv_banheiros_building_fragment"
                 android:text="@string/banheiros"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_8"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tv_num_quartos_building_fragment"
                 app:layout_constraintStart_toEndOf="@+id/tv_num_banheiros_building_fragment"/>
 
@@ -95,16 +98,18 @@
                 tools:text="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/tv_num_quartos_building_fragment"
+                app:layout_constraintTop_toBottomOf="@+id/tv_banheiros_building_fragment"
                 app:layout_constraintStart_toStartOf="@+id/tv_num_banheiros_building_fragment"/>
 
         <TextView
                 android:id="@+id/tv_vagas_building_fragment"
                 android:text="@string/vagas"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_8"
-                app:layout_constraintTop_toBottomOf="@+id/tv_num_quartos_building_fragment"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_banheiros_building_fragment"
                 app:layout_constraintStart_toEndOf="@+id/tv_num_vagas_building_fragment"/>
 
         <TextView
@@ -115,13 +120,14 @@
                 android:layout_marginStart="@dimen/margin_24"
                 android:layout_marginTop="@dimen/margin_8"
                 android:textSize="@dimen/med_font_size"
+                app:layout_constraintEnd_toStartOf="@+id/tv_num_valor_building_fragment"
                 app:layout_constraintTop_toBottomOf="@+id/tv_vagas_building_fragment"
                 app:layout_constraintStart_toEndOf="@+id/iv_foto_building_fragment"/>
 
         <TextView
                 android:id="@+id/tv_num_valor_building_fragment"
                 tools:text="R$ 1000000"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_8"
                 android:textSize="@dimen/med_font_size"

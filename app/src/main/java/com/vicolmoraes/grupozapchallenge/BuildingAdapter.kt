@@ -41,7 +41,9 @@ class BuildingAdapter(val items: List<Building>, val context: Context, val click
             itemVieww.tv_num_banheiros_building_fragment.text = part.bathrooms.toString()
             itemVieww.tv_num_vagas_building_fragment.text = part.parkingSpaces.toString()
             itemVieww.tv_num_metros_building_fragment.text = part.usableAreas.toString()
-            itemVieww.tv_num_valor_building_fragment.text = part.pricingInfos.price
+            itemVieww.tv_num_valor_building_fragment.text =
+                itemVieww.context.getString(R.string.formatacao_reais, part.pricingInfos.price.toFloat())
+
             Glide.with(itemVieww.context).load(part.images.get(0)).into(itemVieww.iv_foto_building_fragment);
 
             val layout: CardView = itemVieww.cv_card_building_fragment
