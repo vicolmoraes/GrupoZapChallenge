@@ -3,5 +3,6 @@
         xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/iv_foto_image_item"
         tools:src="@tools:sample/avatars"
+        android:importantForAccessibility="no"
         android:layout_width="400dp"
         android:layout_height="400dp"/>

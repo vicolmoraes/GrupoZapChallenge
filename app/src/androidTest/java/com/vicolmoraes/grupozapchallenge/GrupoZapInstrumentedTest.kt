@@ -56,17 +56,19 @@ class GrupoZapInstrumentedTest {
         Thread.sleep(2000)
 
         Espresso.onView(ViewMatchers.withId(R.id.rv_vivareal_activity))
-            .check(
-                ViewAssertions.matches(
-                    ViewMatchers.hasDescendant(
-                        ViewMatchers.withId(R.id.tv_banheiros_building_fragment)
-                    )
-                )
-
-            )
-
-        Espresso.onView(ViewMatchers.withId(R.id.rv_vivareal_activity))
             .check(ViewAssertions.matches(ViewMatchers.hasChildCount(20)))
 
+//        Espresso.onView(
+//            CoreMatchers.allOf(
+//                ViewMatchers.withId(R.id.rv_vivareal_activity),
+//                ViewMatchers.hasDescendant(
+//                    ViewMatchers.withId(R.id.tv_banheiros_building_fragment)),
+//                ViewMatchers.isDisplayed()
+//            )
+//        ).check(ViewAssertions.matches(ViewMatchers.hasDescendant(
+//            ViewMatchers.withText("quartos"))))
+
+//        Espresso.onView(childAtPosition(
+//            ViewMatchers.withId(R.id.rv_vivareal_activity), 3))
     }
 }
