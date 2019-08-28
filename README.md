@@ -10,9 +10,9 @@ Para inicializar o aplicativo clique em "Run App" (Shift + F10) e então escolha
 <b>Como rodar os testes instrumentados?</b>
 
 Ache o arquivo GrupoZapInstrumentedTest, clique nele com o botão direireito, e clique em "Run"
-
+<p align="center">
 <img width="400" height="800" src="https://raw.githubusercontent.com/vicolmoraes/GrupoZapChallenge/master/Screenshot_1567002776.png">
 <img width="400" height="800" src="https://raw.githubusercontent.com/vicolmoraes/GrupoZapChallenge/master/Screenshot_1567002788.png">
-<img width="400" height="800" src="https://raw.githubusercontent.com/vicolmoraes/GrupoZapChallenge/master/Screenshot_1567002801.png">
+<img width="400" height="800" src="https://raw.githubusercontent.com/vicolmoraes/GrupoZapChallenge/master/Screenshot_1567002801.png"></p>
 
 
